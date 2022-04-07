@@ -1,12 +1,37 @@
-*{
+* {
     padding: 0%;
     margin: 0%;
 }
 
 body {
-    display: flex;
-    background-color:lemonchiffon;
-    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
     align-items: center;
+    background-color: cornsilk;
+    display: grid;
+    grid-template-areas:
+        "cabeza"
+        "articulos"
+        "pie";
+    grid-template-columns: max-content;
+
 }
 
+h2 {
+    margin: 2%;
+}
+
+/* Grid Area */
+
+header {
+    grid-area: cabeza;
+}
+
+article {
+    grid-area: articulos;
+}
+
+footer {
+    grid-area: pie;
+}
