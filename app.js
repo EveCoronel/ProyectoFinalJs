@@ -11,25 +11,43 @@ function init() {
 
     const recetas = []
 
-    function guardarReceta() {
-        recetas.push(new Receta(titulo, contenido))
-    }
 
-    let titulo = prompt('Comparte tu receta. Ingresa el título de tu receta')
-    let contenido = prompt('Escribe el paso a paso de tu receta')
+    let articulo = document.getElementById('articulos')
+    let contenedor = document.createElement('div');
+    let contenedor1 = document.createElement('div');
+    let myBtn = document.querySelector("#boton")
 
-
-    console.log(recetas)
-
-    if ((titulo !== null) && (contenido !== null)) {
-        let articulo = document.getElementById('articulos')
-        let contenedor = document.createElement('div');
-
-        contenedor.innerHTML = `<h1> ${titulo} </h1>
-    <p> ${contenido} </p>`;
+    myBtn.addEventListener('click', () => {
+        contenedor.innerHTML = `<input type="text" name="Título" id="tituloIngresado">Título de la receta</input><br>
+        <textarea name="" id="contenidoIngresado">Contenido de la receta</textarea>
+        <button id="guardar" type="submit">Guardar receta</button>`
 
         articulo.appendChild(contenedor);
-        guardarReceta()
 
-    }
+        let contenidoIngresado = document.querySelector('#contenidoIngresado')
+        let tituloIngresado = document.querySelector('#tituloIngresado');
+        let recetaIngresada = document.querySelector('#guardar')
+
+        recetaIngresada.addEventListener('click', () => {
+
+            articulo.removeChild(contenedor)
+
+            contenedor1.innerHTML += `<h3> ${tituloIngresado.value}</h3>
+        <p> ${contenidoIngresado.value} </p>`;
+
+
+            localStorage.setItem('recetaIngresada', contenedor1)
+
+            articulo.appendChild(contenedor1);
+
+
+            recetas.push(new Receta(tituloIngresado.value, contenidoIngresado.value));
+
+
+
+        })
+
+        console.log(recetas)
+    })
+
 }
