@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Parisienne";
+    src: url(Parisienne/Parisienne-Regular.ttf);
+}
+
+body {
+    background-image: linear-gradient(#ee9ca7, #ffdde1);
+    align-items: center;
+    justify-items: center;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: "Parisienne";
+    font-size: 4rem;
+}
+
+.boton {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: lightpink;
+    color: black;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+    border: solid 1px;
+
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.articuloIndex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+article img {
+    border: 5px solid white;
+    margin: 5%;
+    padding: 3%;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin: 3%;
+
+}
+
+
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 85px;
+    align-items: center;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    background-color: white;
+}
+
+textarea {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 170px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+input {
+    height: 25px;
+    margin-top: 1%;
+}
+
+div {
+    flex-direction: column;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-width: 2%;
+    border: black;
+    border-radius: 10%;
+}
+
+
+/*
+Grid Area Index
+*/
+
+header {
+    grid-area: cabeza;
+}
+
+nav {
+    grid-area: menu;
+}
+
+article {
+    grid-area: galeria;
+}
+
+footer {
+    grid-area: pie;
+}
+
+.gridHome {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-areas:
+        "cabeza"
+        "menu"
+        "galeria"
+        "pie"
+    ;
+    grid-template-rows: 15% 10% 55% auto;
+    grid-row-gap: 2%;
+}
+
+
+/*
+Grid Area Pedidos
+*/
+
+header {
+    grid-area: cabeza;
+}
+
+nav {
+    grid-area: menu;
+}
+
+.gridPedidos {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-areas:
+        "cabeza"
+        "menu"
+        "titulo"
+        "pie"
+    ;
+    grid-template-rows: 12% 45% 20% auto;
+    grid-row-gap: 2%;
+}
+
+/*
+Grid recetas
+*/
+.girdRecetas {
+
+
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#ee9ca7, #ffdde1);
+    display: grid;
+    grid-template-areas:
+        "cabeza"
+        "menu"
+        "section"
+        "galeria"
+        "pie";
+    grid-template-columns: 100%;
+    grid-template-rows: 15%, 10%, 65%, 5%, auto;
+    background-size: auto;
+    background-attachment: fixed;
+
+
+}
+
+header {
+    display: flex;
+    grid-area: cabeza;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    grid-area: section;
+}
+
+nav {
+    grid-area: menu;
+}
+
+
+article {
+    grid-area: galeria;
+}
+
+footer {
+    grid-area: pie;
+    text-align: center;
+}
