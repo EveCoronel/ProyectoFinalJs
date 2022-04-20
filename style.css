@@ -3,20 +3,13 @@
     padding: 0;
 }
 
-@font-face {
-    font-family: "Parisienne";
-    src: url(Parisienne/Parisienne-Regular.ttf);
-}
 
 body {
     background-image: linear-gradient(#ee9ca7, #ffdde1);
-    align-items: center;
-    justify-items: center;
     background-attachment: fixed;
 }
 
 h1 {
-    font-family: "Parisienne";
     font-size: 4rem;
 }
 
@@ -28,6 +21,7 @@ h1 {
     border-radius: 4px;
     box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
     border: solid 1px;
+    margin: 2%;
 
 }
 
@@ -56,6 +50,7 @@ section {
     justify-content: space-around;
     flex-wrap: nowrap;
     margin: 3%;
+    flex-direction: column;
 
 }
 
@@ -87,6 +82,7 @@ input {
 }
 
 div {
+    display: flex;
     flex-direction: column;
     margin-left: 4%;
     margin-right: 4%;
@@ -95,10 +91,44 @@ div {
     border-width: 2%;
     border: black;
     border-radius: 10%;
+    align-items: flex-start;
+}
+
+.cuadro {
+    margin: 1%;
+    width: 150px;
+    height: 25px;
+
+}
+
+/*
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    padding: 16px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #ccc;
+}
+
+*/
+
+.form {
+    width: 50%;
+    height: 85%;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: #fbfbfb;
+    padding-left: 30px;
 }
 
 
+
+
 /*
+
 Grid Area Index
 */
 
@@ -130,6 +160,8 @@ footer {
     ;
     grid-template-rows: 15% 10% 55% auto;
     grid-row-gap: 2%;
+    align-items: center;
+    justify-items: center;
 }
 
 
@@ -152,11 +184,12 @@ nav {
     grid-template-areas:
         "cabeza"
         "menu"
-        "titulo"
+        "section"
         "pie"
     ;
-    grid-template-rows: 12% 45% 20% auto;
+    grid-template-rows: 15% 10% auto 2%;
     grid-row-gap: 2%;
+    justify-items: center;
 }
 
 /*
@@ -181,6 +214,8 @@ Grid recetas
     grid-template-rows: 15%, 10%, 65%, 5%, auto;
     background-size: auto;
     background-attachment: fixed;
+    align-items: center;
+    justify-items: center;
 
 
 }

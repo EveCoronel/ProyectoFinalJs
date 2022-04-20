@@ -23,7 +23,7 @@ let myBtn = document.querySelector("#boton")
 myBtn.addEventListener('click', () => {
 
     contenedor.innerHTML = `<input type="text" name="Título" id="tituloIngresado">Título de la receta</input><br>
-        <textarea name="" id="contenidoIngresado">Contenido de la receta</textarea>
+        <textarea name="" id="contenidoIngresado" placeholder="Contenido de la receta"></textarea>
         <button class="boton" id="guardar" type="submit">Guardar receta</button>
         <button class="boton" id="cancelar" >Cancelar</button>`
 

@@ -6,36 +6,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crea tu pedido</title>
-    <link rel="icon" type="image/x-icon" href="icono.jpg" />
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/x-icon" href="img/icono.jpg" />
+    <link rel="stylesheet" href="style.css">
+
+    <script src="pedidos.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
 
 </head>
 
-<body class="gridPedidos">
+<body class="gridPedidos" onload="init()">
     <header>
         <h1>Pastelería artesanal</h1>
     </header>
 
     <nav>
         <a class="boton" href="index.html">Home</a>
-
+        <a class="boton" href="recetas.html">Recetas</a>
+        <a class="boton" href="pedidos.html">Pedidos</a>
     </nav>
 
-    <button> <a class="boton" href="pedidos.html">Crea una orden</a>
-    </button>
-    
-    <section>
 
-        <input type="text" name="Sabor" id="sabor">
+    <section class="form">
+        <form action="" id="myForm">
+            <div>
+
+                <h2 style="margin: 1%;">Realiza tu pedido 😋</h2>
 
 
+                <label for="numero">Núemero de teléfono</label>
+                <input class="cuadro" type="tel" name="telefono" placeholder="Número">
+
+                <label for="fecha"> Fecha de entrega de tu pedido</label>
+                <input class="cuadro" type="date" name="fecha" required>
+
+                <label for="email">Correo electrónico</label>
+                <input class="cuadro" type="email" id="email" placeholder="Correo electrónico">
+
+
+                <label for="saborBis">Sabor de bizcochuelo</label>
+                <select id="saborBis" class="cuadro" name="saborBis" required>
+                    <option value="0">...</option>
+                    <option value="Chocolate">Chocolate</option>
+                    <option value="Vainilla">Vainilla</option>
+                    <option value="Marmolado">Marmolado</option>
+                    <option value="Limón">Limón</option>
+                    <option value="Dulce de leche">Dulce de leche</option>
+                </select>
+
+
+                <label for="saborRell">Sabor de relleno</label>
+                <select id="saborRell" class="cuadro" name="saborRell" required>
+                    <option value="0">...</option>
+                    <option value="Chocolate">Chocolate</option>
+                    <option value="Nutella">Nutella</option>
+                    <option value="Crema de frutilla">Crema de frutilla</option>
+                    <option value="Limón">Limón</option>
+                    <option value="Dulce de leche">Dulce de leche</option>
+                </select>
+
+                <label for="kilos">Kilos deseados</label>
+                <select id="kilos" class="cuadro" name="kilos" required>
+                    <option value="0">...</option>
+                    <option value="1kg // 2 personas">1kg // 2 personas</option>
+                    <option value="3kg // 6 personas">3kg // 6 personas</option>
+                    <option value="5kg// 10 personas">5kg// 10 personas</option>
+                    <option value="7kg // 14 personas">7kg // 14 personas</option>
+                    <option value="10kg // 25 personas">10kg // 25 personas</option>
+                </select>
+
+                <label for="topping">Decorado / topping</label>
+                <select id="topping" class="cuadro" name="topping" required>
+                    <option value="0">...</option>
+                    <option value="Oreos">Oreos</option>
+                    <option value="Copos de dulce de leche">Copos de dulce de leche</option>
+                    <option value="Frutilla">Frutilla</option>
+                    <option value="Merengue">Merengue</option>
+                    <option value="Rocklets">Rocklets</option>
+                </select>
+
+                <label for="detalles">Adicional</label>
+                <textarea style="width: 450px; height: 100px;" name="detalles" id="detallesPedido"
+                    placeholder="Peticiones adicionales"></textarea>
+
+                <section style="display: flex; flex-direction: row;">
+
+                    <button class="boton" id="enviar" type="submit"> Enviar </button>
+                    <button class="boton" id="cancelar" type="reset"> Cancelar </button>
+
+                </section>
+            </div>
+        </form>
     </section>
-
     <footer> Pie de página </footer>
 
-
 </body>
-
-<script src="app.js"></script>
 
 </html>
