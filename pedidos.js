@@ -2,7 +2,6 @@
 // 1) Almacenar los datos recibidos a través del formulario
 // 2) Mostrar un Sweet alert para las dos opciones, enviado, o cancelado
 // 3) En caso de confirmar el pedido, mostrar un sweat alert con los datos de la orden.
-
 function init() {
 
     enviarFormulario()
@@ -19,16 +18,28 @@ function enviarFormulario() {
         event.preventDefault()
 
         almacenarDatos()
+        /*
+                if (saborBis.value === "0" && saborRell.value === "0" && kilos.value === "0" && topping.value === "0") {
 
-        if (saborBis.value === "0" && saborRell.value === "0" && kilos.value === "0" && topping.value === "0") {
-            alert('Oh oh algo salió mal')
+                    Swal.fire({
+                        icon: "error",
+                        title: "Lo siento, no ha elegido nada.",
+                    })
+                   
 
-        } else {
-            alert('Enviado ok')
+                } else {
 
-            pedidos.push(new PedidoRecibido(saborBis, saborRell, kilos, topping))
-            console.log(pedidos)
-        }
+                    Swal.fire({
+                        icon: "success",
+                        title: "Pedido realizado"
+                    })
+                    pedidos.push(new PedidoRecibido(saborBis, saborRell, kilos, topping))
+                    console.log(pedidos)
+                }
+        */
+       
+        saborBis.value === "0" && saborRell.value === "0" && kilos.value === "0" && topping.value === "0" ? (alert('Lo siento, no has elegido nada'))
+        : (alert('Enviado correctamente'), pedidos.push(new PedidoRecibido(saborBis, saborRell, kilos, topping)));
 
 
 
@@ -67,3 +78,4 @@ class PedidoRecibido {
     }
 
 }
+
