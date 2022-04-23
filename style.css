@@ -22,6 +22,7 @@ h1 {
     box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
     border: solid 1px;
     margin: 2%;
+    width: 150px;
 
 }
 
@@ -81,7 +82,8 @@ input {
     margin-top: 1%;
 }
 
-div {
+
+.div {
     display: flex;
     flex-direction: column;
     margin-left: 4%;
@@ -93,6 +95,7 @@ div {
     border-radius: 10%;
     align-items: flex-start;
 }
+
 
 .cuadro {
     margin: 1%;
@@ -207,8 +210,8 @@ Grid recetas
     grid-template-areas:
         "cabeza"
         "menu"
-        "section"
         "galeria"
+        "section"
         "pie";
     grid-template-columns: 100%;
     grid-template-rows: 15%, 10%, 65%, 5%, auto;

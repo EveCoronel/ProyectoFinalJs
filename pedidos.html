@@ -9,9 +9,9 @@
     <link rel="icon" type="image/x-icon" href="img/icono.jpg" />
     <link rel="stylesheet" href="style.css">
 
-    <script src="pedidos.js" defer></script>
-  <!--  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
+    <script src="pedidos.js" defer></script> 
 
 </head>
 
@@ -29,13 +29,13 @@
 
     <section class="form">
         <form action="" id="myForm">
-            <div>
+            <div class="div">
 
                 <h2 style="margin: 1%;">Realiza tu pedido 😋</h2>
 
 
                 <label for="numero">Núemero de teléfono</label>
-                <input class="cuadro" type="tel" name="telefono" placeholder="Número">
+                <input class="cuadro" type="tel" name="telefono" placeholder="Número" required>
 
                 <label for="fecha"> Fecha de entrega de tu pedido</label>
                 <input class="cuadro" type="date" name="fecha" required>
@@ -100,6 +100,6 @@
     </section>
     <footer> Pie de página </footer>
 
-</body>
 
+</body>
 </html>

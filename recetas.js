@@ -13,12 +13,13 @@ class Receta {
 
 }
 
-const recetas = [{}]
+const recetas = []
 
 let articulo = document.getElementById('articulos')
 let contenedor = document.createElement('div');
 let contenedor1 = document.createElement('div');
 let myBtn = document.querySelector("#boton")
+
 
 myBtn.addEventListener('click', () => {
 
@@ -27,6 +28,7 @@ myBtn.addEventListener('click', () => {
         <button class="boton" id="guardar" type="submit">Guardar receta</button>
         <button class="boton" id="cancelar" >Cancelar</button>`
 
+    contenedor.style = "margin: 2%;"
     articulo.appendChild(contenedor);
 
 
@@ -46,7 +48,7 @@ myBtn.addEventListener('click', () => {
 
 
         articulo.appendChild(contenedor1);
-        recetas.push(new Receta(tituloIngresado.value, contenidoIngresado.value));
+        recetas.push( new Receta(tituloIngresado.value, contenidoIngresado.value));
         localStorage.setItem('Recetas_Ingresadas', JSON.stringify(recetas))
 
     })
@@ -64,25 +66,35 @@ myBtn.addEventListener('click', () => {
     console.log(recetas)
 
 
-    
+
 })
 
+function imprimirDiv() {
 
-let recetaGuardada = JSON.parse(localStorage.getItem('Recetas_Ingresadas'));
+    let recetaGuardada = JSON.parse(localStorage.getItem('Recetas_Ingresadas'));
 
-if (recetaGuardada) {
+    if (recetaGuardada) {
 
+        recetaGuardada.forEach(element => {
 
-    let {titulo, contenido} = recetaGuardada
+            let {
+                titulo,
+                contenido
+            } = element
 
-    console.log(titulo)
-    
-    let articulo2 = document.getElementById('articulos')
-    let contenedor2 = document.createElement('div');
+            console.log(titulo)
 
-    
-    contenedor2.innerHTML += `<h3> ${titulo.value}</h3>
-        <p> ${contenido.value} </p>`;
+            let contenedor2 = document.createElement('div');
 
-    articulo.appendChild(articulo2);
+            contenedor2.className = "div"
+
+            contenedor2.innerHTML += `<h3> ${titulo}</h3>
+        <p> ${contenido} </p>`;
+
+            articulo.appendChild(contenedor2);
+        });
+    }
+
 }
+
+imprimirDiv()

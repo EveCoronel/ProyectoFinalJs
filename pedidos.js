@@ -18,64 +18,59 @@ function enviarFormulario() {
         event.preventDefault()
 
         almacenarDatos()
-        /*
-                if (saborBis.value === "0" && saborRell.value === "0" && kilos.value === "0" && topping.value === "0") {
 
-                    Swal.fire({
-                        icon: "error",
-                        title: "Lo siento, no ha elegido nada.",
-                    })
-                   
+        if (saborBis.value === "0" || saborRell.value === "0" || kilos.value === "0" || topping.value === "0") {
 
-                } else {
+            Swal.fire({
+                icon: 'error',
+                text: 'Lo siento, no has seleccionado todos los valores.',
+              })
 
-                    Swal.fire({
-                        icon: "success",
-                        title: "Pedido realizado"
-                    })
-                    pedidos.push(new PedidoRecibido(saborBis, saborRell, kilos, topping))
-                    console.log(pedidos)
-                }
-        */
-       
-        saborBis.value === "0" && saborRell.value === "0" && kilos.value === "0" && topping.value === "0" ? (alert('Lo siento, no has elegido nada'))
-        : (alert('Enviado correctamente'), pedidos.push(new PedidoRecibido(saborBis, saborRell, kilos, topping)));
+        } else {
 
+            Swal.fire({
+                icon: "success",
+                title: "Pedido realizado"
+            })
 
+            pedidos.push(new PedidoRecibido(saborBis, saborRell, kilos, topping))
+            console.log(pedidos)
+            btnEnviar.reset()
+
+        }
 
     })
 
 }
 
-function almacenarDatos() {
-    let saborBis = document.querySelector("#saborBis").value;
-    console.log(saborBis)
+    function almacenarDatos() {
+        let saborBis = document.querySelector("#saborBis").value;
+        console.log(saborBis)
 
-    let saborRell = document.querySelector('#saborRell').value;
-    console.log(saborRell)
+        let saborRell = document.querySelector('#saborRell').value;
+        console.log(saborRell)
 
-    let kilos = document.querySelector('#kilos').value;
-    console.log(kilos)
+        let kilos = document.querySelector('#kilos').value;
+        console.log(kilos)
 
-    let topping = document.querySelector('#topping').value;
-    console.log(topping)
+        let topping = document.querySelector('#topping').value;
+        console.log(topping)
 
-    return saborBis, saborRell, kilos, topping
-
-}
-
-let pedidos = []
-
-class PedidoRecibido {
-
-    constructor(saborBis, saborRell, kilos, topping) {
-
-        this.saborBis = saborBis.value
-        this.saborRell = saborRell.value
-        this.kilos = kilos.value
-        this.topping = topping.value
+        return saborBis, saborRell, kilos, topping
 
     }
 
-}
+    let pedidos = []
 
+    class PedidoRecibido {
+
+        constructor(saborBis, saborRell, kilos, topping) {
+
+            this.saborBis = saborBis.value
+            this.saborRell = saborRell.value
+            this.kilos = kilos.value
+            this.topping = topping.value
+
+        }
+
+    }
