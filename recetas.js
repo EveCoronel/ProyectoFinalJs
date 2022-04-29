@@ -1,5 +1,8 @@
 function init() {
 
+    imprimirDiv()
+
+    recetasfetch()
 
 }
 
@@ -48,7 +51,7 @@ myBtn.addEventListener('click', () => {
 
 
         articulo.appendChild(contenedor1);
-        recetas.push( new Receta(tituloIngresado.value, contenidoIngresado.value));
+        recetas.push(new Receta(tituloIngresado.value, contenidoIngresado.value));
         localStorage.setItem('Recetas_Ingresadas', JSON.stringify(recetas))
 
     })
@@ -97,4 +100,46 @@ function imprimirDiv() {
 
 }
 
-imprimirDiv()
+
+
+
+let url = "recetas.json"
+fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        recetasfetch(data)
+    });
+
+function recetasfetch(data) {
+
+    let contenedor3 = document.createElement('div');
+    contenedor3.className = "div"
+
+
+    console.log(data)
+
+
+
+    contenedor3.innerHTML = `<h3> ${data.titulo}</h3>
+        <img src=${data.imagen}>`
+
+
+    data.ingredientes.forEach((element) => {
+
+        contenedor3.innerHTML += `<ul>${element}</ul>`
+
+    })
+
+
+    data.preparacion.forEach((element) => {
+
+        contenedor3.innerHTML += `<ol>${element}</ol>`
+
+    })
+
+
+    articulo.appendChild(contenedor3);
+
+
+
+}
