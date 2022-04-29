@@ -51,24 +51,22 @@ myBtn.addEventListener('click', () => {
 
 
         articulo.appendChild(contenedor1);
+
         recetas.push(new Receta(tituloIngresado.value, contenidoIngresado.value));
+
+        
         localStorage.setItem('Recetas_Ingresadas', JSON.stringify(recetas))
 
+
     })
+
 
     cancelar.addEventListener('click', () => {
 
         articulo.removeChild(contenedor)
         articulo.removeChild(contenedor1)
 
-        console.log('ola')
-
-
     })
-
-    console.log(recetas)
-
-
 
 })
 
@@ -97,6 +95,7 @@ function imprimirDiv() {
             articulo.appendChild(contenedor2);
         });
     }
+
 
 }
 

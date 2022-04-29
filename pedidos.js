@@ -24,7 +24,7 @@ function enviarFormulario() {
             Swal.fire({
                 icon: 'error',
                 text: 'Lo siento, no has seleccionado todos los valores.',
-              })
+            })
 
         } else {
 
@@ -37,40 +37,42 @@ function enviarFormulario() {
             console.log(pedidos)
             btnEnviar.reset()
 
+            localStorage.setItem('Pedidos_realizados', JSON.stringify(pedidos))
+
         }
 
     })
 
 }
 
-    function almacenarDatos() {
-        let saborBis = document.querySelector("#saborBis").value;
-        console.log(saborBis)
+function almacenarDatos() {
+    let saborBis = document.querySelector("#saborBis").value;
+    console.log(saborBis)
 
-        let saborRell = document.querySelector('#saborRell').value;
-        console.log(saborRell)
+    let saborRell = document.querySelector('#saborRell').value;
+    console.log(saborRell)
 
-        let kilos = document.querySelector('#kilos').value;
-        console.log(kilos)
+    let kilos = document.querySelector('#kilos').value;
+    console.log(kilos)
 
-        let topping = document.querySelector('#topping').value;
-        console.log(topping)
+    let topping = document.querySelector('#topping').value;
+    console.log(topping)
 
-        return saborBis, saborRell, kilos, topping
+    return saborBis, saborRell, kilos, topping
 
-    }
+}
 
-    let pedidos = []
+let pedidos = []
 
-    class PedidoRecibido {
+class PedidoRecibido {
 
-        constructor(saborBis, saborRell, kilos, topping) {
+    constructor(saborBis, saborRell, kilos, topping) {
 
-            this.saborBis = saborBis.value
-            this.saborRell = saborRell.value
-            this.kilos = kilos.value
-            this.topping = topping.value
-
-        }
+        this.saborBis = saborBis.value
+        this.saborRell = saborRell.value
+        this.kilos = kilos.value
+        this.topping = topping.value
 
     }
+
+}
