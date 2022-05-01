@@ -83,8 +83,6 @@ function imprimirDiv() {
                 contenido
             } = element
 
-            console.log(titulo)
-
             let contenedor2 = document.createElement('div');
 
             contenedor2.className = "div"
@@ -102,7 +100,7 @@ function imprimirDiv() {
 
 
 
-let url = "recetas.json"
+let url = "data/recetas.json"
 fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -113,11 +111,6 @@ function recetasfetch(data) {
 
     let contenedor3 = document.createElement('div');
     contenedor3.className = "div"
-
-
-    console.log(data)
-
-
 
     contenedor3.innerHTML = `<h3> ${data.titulo}</h3>
         <img src=${data.imagen}>`
@@ -138,7 +131,6 @@ function recetasfetch(data) {
 
 
     articulo.appendChild(contenedor3);
-
 
 
 }
